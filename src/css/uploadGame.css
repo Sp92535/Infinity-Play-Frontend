@@ -1,0 +1,41 @@
+/* Form Group Styles */
+.upload-game{
+  color: black;
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Label Styles */
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333; /* Dark text color for labels */
+  }
+  
+  /* Input & Textarea Styles */
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Light background for inputs */
+    color: #333; /* Dark text color for inputs */
+  }
+  
+  textarea {
+    resize: vertical; /* Allows vertical resizing */
+    height: 100px;
+  }
+  
+  /* Button Styles */
+  .btn-success {
+  background-color: #28a745; /* Green for upload button */
+}
+.btn-success:disabled{
+  cursor: not-allowed;
+}
+
+}

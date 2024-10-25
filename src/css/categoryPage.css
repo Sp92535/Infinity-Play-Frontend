@@ -1,0 +1,116 @@
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: white;
+  }
+  
+  .categoryPage {
+    padding: 20px;
+  }
+  
+  .hero-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .game-section {
+    margin: 40px 0;
+  }
+  
+  .game-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .game-row {
+    display: flex;
+    overflow-x: hidden; /* Prevent overflow */
+    padding-bottom: 10px;
+    gap: 15px;
+  }
+  
+  .game-card {
+    background-color: #292929;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    flex-shrink: 0;
+    width: 150px; /* Set the width for each card */
+  }
+  
+  .game-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 8px;
+  }
+  
+  .game-card p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .carousel-button {
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .lArrow {
+    left: 0;
+  }
+  
+  .rArrow {
+    right: 0;
+  }
+  
+  .carousel-button:hover {
+    background-color: #666;
+  }
+  
+  .all-games-section {
+    margin: 40px 0; /* Add margin to separate from previous sections */
+}
+
+.all-games-section h2 {
+    font-size: 24px; /* Same font size as the game section */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.all-games-row {
+    display: flex; /* Flexbox layout for all game cards */
+    flex-wrap: wrap; /* Allow wrapping for rows */
+    gap: 15px; /* Space between cards */
+}
+
+.pagination {
+  display: flex; /* Flexbox for pagination buttons */
+  justify-content: center; /* Center align the buttons */
+  margin-top: 20px; /* Space above pagination */
+}
+
+.pagination button {
+  background-color: #444; /* Button background color */
+  border: none; /* Remove border */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Padding for buttons */
+  margin: 0 5px; /* Space between buttons */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.pagination button:hover {
+  background-color: #666; /* Hover effect */
+}
+
+.pagination button.active {
+  background-color: #666; /* Highlight active page */
+  font-weight: bold; /* Make active button bold */
+}

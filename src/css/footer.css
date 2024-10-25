@@ -1,0 +1,39 @@
+/* Footer Specific Styles - Cleaned Up */
+.footer {
+  background: linear-gradient(90deg, #1a1a1a, #333333);
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #ddd;
+  z-index: 10; /* Ensure footer stays below the navbar and other content */
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+}
+
+.link:hover {
+  color: red;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}

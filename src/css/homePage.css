@@ -1,0 +1,76 @@
+/* General styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: white;
+}
+
+.homePage {
+  padding: 20px;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.game-section {
+  margin: 40px 0;
+}
+
+.game-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.game-row {
+  display: flex;
+  overflow-x: hidden; /* Prevent overflow */
+  padding-bottom: 10px;
+  gap: 15px;
+}
+
+.game-card {
+  background-color: #292929;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+  width: 150px; /* Set the width for each card */
+}
+
+.game-card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+}
+
+.game-card p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.carousel-button {
+  background-color: #444;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lArrow {
+  left: 0;
+}
+
+.rArrow {
+  right: 0;
+}
+
+.carousel-button:hover {
+  background-color: #666;
+}

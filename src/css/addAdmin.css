@@ -1,0 +1,57 @@
+.add-admin {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.add-admin h2 {
+  color: #1c1c1c;
+  margin-bottom: 20px;
+}
+
+.add-admin .form-group {
+  margin-bottom: 15px;
+}
+
+.add-admin label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.add-admin input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.add-admin button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-admin button:hover {
+  background-color: #0056b3;
+}
+
+.toggle-password-wrapper {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.toggle-password {
+  cursor: pointer;
+  font-size: 24px;
+}

@@ -1,0 +1,155 @@
+/* General styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: white;
+}
+
+.game-page {
+  padding: 20px;
+}
+
+.game-container {
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.game-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styles */
+.button-container {
+  display: flex; /* Arrange buttons in a row */
+  justify-content: center; /* Center the buttons */
+  margin: 20px 0; /* Space above and below buttons */
+}
+
+.fullscreen-btn, .like-btn, .dislike-btn, .report-btn {
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px; /* Space between buttons */
+}
+
+.fullscreen-btn {
+  background-color: #007bff; /* Blue */
+  color: white;
+  margin-left: auto;
+}
+
+.fullscreen-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.like-btn {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.like-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.dislike-btn {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.dislike-btn:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.report-btn {
+  background-color: #6f42c1; /* Purple */
+  color: white;
+}
+
+.report-btn:hover {
+  background-color: #5a32a3; /* Darker purple on hover */
+}
+
+/* Additional Text Styling */
+.game-description, .game-category {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.game-category {
+  margin-bottom: 20px;
+}
+
+.game-description strong, .game-category strong {
+  color: #ffc107; /* Yellow */
+}
+
+.button-container button[disabled] {
+  cursor: not-allowed;
+}
+
+.report-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+  color: #1c1c1c;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+
+.report-form h2 {
+  margin-bottom: 15px; /* Space below the title */
+}
+
+.report-form input[type="email"] {
+  width: 100%; /* Full width */
+  padding: 10px;
+  margin-bottom: 10px; /* Space below the input */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.report-form textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  margin-bottom: 10px; /* Space below the textarea */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.form-buttons {
+  display: flex; /* Flex container for buttons */
+  justify-content: space-between; /* Space between buttons */
+}
+
+.form-buttons button {
+  flex: 1; /* Make buttons equal width */
+  margin: 0 5px; /* Space between buttons */
+  padding: 10px; /* Padding for buttons */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.blur {
+  filter: blur(5px); /* Adjust the blur intensity as needed */
+  transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.success-message {
+  margin-top: 10px; /* Space above the message */
+  color: #28a745; /* Green color for success */
+  font-weight: bold; /* Make the text bold */
+}

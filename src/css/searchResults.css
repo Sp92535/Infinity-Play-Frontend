@@ -1,0 +1,97 @@
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: white;
+}
+
+/* Game grid styles */
+.search-results{
+  margin-left: 10px;
+}
+
+.search-results .game-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  h2{
+    color: antiquewhite;
+  }
+}
+
+.game-card {
+  background-color: #292929;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 150px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.game-card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+}
+
+.game-card h3 {
+  text-transform: capitalize; /* Ensure names are capitalized */
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.game-card:hover {
+  transform: scale(1.05); /* Add hover effect */
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center; /* Center the pagination */
+  align-items: center;
+  margin-top: 20px; /* Padding above */
+  padding: 10px 0;
+  gap: 5px;
+}
+
+.pagination-page {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 5px 10px; /* Adjusted size */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-page:hover {
+  background-color: #444;
+}
+
+.pagination-page.active {
+  background-color: #007BFF; /* Highlight active page */
+  color: white;
+  border: 2px solid #007BFF; /* Border around active page */
+  font-weight: bold;
+}
+
+.pagination-arrow {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 5px 10px; /* Adjusted size */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination-arrow:disabled {
+  background-color: #555; /* Disabled arrow */
+  cursor: not-allowed;
+}
