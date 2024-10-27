@@ -60,9 +60,9 @@ const SearchResults = () => {
 
   return (
     <div className="search-results">
-      <div className="hero-banner">
+      {/* <div className="hero-banner">
         <img src="/search.png" alt="Hero Banner" />
-      </div>
+      </div> */}
         <h2>Search Results for "{query}"</h2>
         <br></br>
       <div className="game-grid">
