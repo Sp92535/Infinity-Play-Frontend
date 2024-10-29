@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {env} from '../utils/env'
 import '../css/deleteAdmin.css';
 
 const DeleteAdmin = () => {
@@ -18,7 +19,7 @@ const DeleteAdmin = () => {
     setSuccess(null); // Clear previous success message
 
     try {
-      const response = await fetch(`https://infinityplayserver.onrender.com/api/admin/search?username=${username}`,{
+      const response = await fetch(`${env.SERVER}/admin/search?username=${username}`,{
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`, // Include JWT token
         },
@@ -63,7 +64,7 @@ const DeleteAdmin = () => {
       setSuccess(null); // Clear previous success message
 
       try {
-        const response = await fetch(`https://infinityplayserver.onrender.com/api/admin/delete?username=${confirmDeleteUsername}`, {
+        const response = await fetch(`${env.SERVER}/admin/delete?username=${confirmDeleteUsername}`, {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`, // Include JWT token

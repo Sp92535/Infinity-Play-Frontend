@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {env} from '../utils/env'
 import '../css/searchResults.css'
 
 const SearchResults = () => {
@@ -24,7 +25,7 @@ const SearchResults = () => {
   const fetchSearchResults = async (pageNo) => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://infinityplayserver.onrender.com/api/search`, {
+      const response = await axios.get(`${env.SERVER}/search`, {
         params: { query, page_no: pageNo }
       });
       setGames(response.data.games);

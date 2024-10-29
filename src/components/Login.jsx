@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {env} from '../utils/env'
 import '../css/login.css';
 
 const Login = ({ onLogin }) => { // Accept onLogin as a prop
@@ -14,7 +15,7 @@ const Login = ({ onLogin }) => { // Accept onLogin as a prop
     setError(''); // Clear any previous error messages
   
     try {
-      const response = await fetch('https://infinityplayserver.onrender.com/api/admin/login', {
+      const response = await fetch(`${env.SERVER}/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

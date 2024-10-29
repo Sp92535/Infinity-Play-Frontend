@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import {env} from '../utils/env'
 import "../css/uploadGame.css";
 
 function UploadGame() {
@@ -60,7 +61,7 @@ function UploadGame() {
 
     try {
       const response = await axios.post(
-        "https://infinityplayserver.onrender.com/api/admin/upload",
+        `${env.SERVER}/admin/upload`,
         formData,
         {
           headers: {

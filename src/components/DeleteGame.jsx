@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import {env} from '../utils/env'
 import "../css/deleteGame.css";
 
 function DeleteGame() {
@@ -18,7 +19,7 @@ function DeleteGame() {
     }
 
     try {
-      const response = await axios.get(`https://infinityplayserver.onrender.com/api/search`, {
+      const response = await axios.get(`${env.SERVER}/search`, {
         params: { query: trimmedQuery },
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`, // Include JWT token
@@ -35,7 +36,7 @@ function DeleteGame() {
     if (confirmDeleteGameName) {
       try {
         await axios.delete(
-          `https://infinityplayserver.onrender.com/api/${confirmDeleteGameName}`
+          `${env.SERVER}/${confirmDeleteGameName}`
         ,{
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`, // Include JWT token

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import {env} from '../utils/env'
 import '../css/categoryPage.css';
 
 function CategoryPage() {
@@ -25,7 +26,7 @@ function CategoryPage() {
           navigate("/notFound");
       }
 
-      const response = await fetch(`https://infinityplayserver.onrender.com/api/category_latest/${category}`);
+      const response = await fetch(`${env.SERVER}/category_latest/${category}`);
       const data = await response.json();
       setCategoryGames(data.games);
     } catch (error) {
@@ -36,7 +37,7 @@ function CategoryPage() {
   // Function to fetch all games in a category
   const fetchAllGamesByCategory = async () => {
     try {
-      const response = await fetch(`https://infinityplayserver.onrender.com/api/category_all/${category}?page_no=${pageNo}`);
+      const response = await fetch(`${env.SERVER}/category_all/${category}?page_no=${pageNo}`);
       const data = await response.json();
       setAllCategoryGames(data.games);
       setTotalGames(data.total);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import {env} from '../utils/env'
 import '../css/homePage.css';
 
 function HomePage() {
@@ -16,15 +17,15 @@ function HomePage() {
   // Function to fetch game data
   const fetchGameData = async () => {
     try {
-      const newGamesResponse = await fetch('https://infinityplayserver.onrender.com/api/category_latest/new');
+      const newGamesResponse = await fetch(`${env.SERVER}/category_latest/new`);
       const newGamesData = await newGamesResponse.json();
       setNewGames(newGamesData.games);
 
-      const trendingGamesResponse = await fetch('https://infinityplayserver.onrender.com/api/category_latest/trending');
+      const trendingGamesResponse = await fetch(`${env.SERVER}/category_latest/trending`);
       const trendingGamesData = await trendingGamesResponse.json();
       setTrendingGames(trendingGamesData.games);
 
-      const popularGamesResponse = await fetch('https://infinityplayserver.onrender.com/api/category_latest/popular');
+      const popularGamesResponse = await fetch(`${env.SERVER}/category_latest/popular`);
       const popularGamesData = await popularGamesResponse.json();
       setPopularGames(popularGamesData.games);
       

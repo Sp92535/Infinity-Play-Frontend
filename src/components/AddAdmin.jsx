@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {env} from '../utils/env'
 import '../css/addAdmin.css';
 
 const AddAdmin = () => {
@@ -20,7 +21,7 @@ const AddAdmin = () => {
     }
 
     try {
-      const response = await fetch('https://infinityplayserver.onrender.com/api/admin/create_user', {
+      const response = await fetch(`${env.SERVER}/admin/create_user`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

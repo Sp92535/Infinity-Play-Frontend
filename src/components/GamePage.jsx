@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import {env} from '../utils/env'
 import '../css/gamePage.css';
 
 function capitalize(str) {
@@ -23,7 +24,7 @@ function GamePage() {
         const fetchGame = async () => {
             try {
                 const decodedGameName = decodeURIComponent(gameName.replace(/-/g, ' '));
-                const response = await axios.get(`https://infinityplayserver.onrender.com/api/${encodeURIComponent(decodedGameName)}`);
+                const response = await axios.get(`${env.SERVER}/${encodeURIComponent(decodedGameName)}`);
                 setGame(response.data.data);
                 setVotes(response.data.data.noOfVotes);
             } catch (error) {
@@ -54,7 +55,7 @@ function GamePage() {
 
     const handleVote = async (like) => {
         try {
-            await axios.get(`https://infinityplayserver.onrender.com/api/vote/${game.gameName}?like=${like}`);
+            await axios.get(`${env.SERVER}/vote/${game.gameName}?like=${like}`);
             setHasVoted(true);
             setVotes(votes + 1);
             const vote = like === 1 ? 'like' : 'dislike';
@@ -89,7 +90,7 @@ function GamePage() {
             message: formData.get('message'),
         };
 
-        axios.post('https://infinityplayserver.onrender.com/api/mail', reportData)
+        axios.post(`${env.SERVER}/mail`, reportData)
             .then(response => {
                 setIsReported(true);
                 localStorage.setItem(`reported_${gameName}`, 'true');
@@ -139,7 +140,7 @@ function GamePage() {
                 {game.gameType === 'flash' ? (
                     <object
                         id="gameObject"
-                        data={`https://infinityplayserver.onrender.com/api/gameFile/${game.gamePath}`}
+                        data={`${env.SERVER}/gameFile/${game.gamePath}`}
                         type="application/x-shockwave-flash"
                         width="800"
                         height="500"
@@ -152,7 +153,7 @@ function GamePage() {
                 ) : (
                     <iframe
                         title={game.gameName}
-                        src={`https://infinityplayserver.onrender.com/api/gameFile/${game.gamePath}`} // Adjust based on your API
+                        src={`${env.SERVER}/gameFile/${game.gamePath}`} // Adjust based on your API
                         width="800"
                         height="500"
                         style={{ border: 'none' }}
