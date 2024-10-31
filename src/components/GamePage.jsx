@@ -23,8 +23,7 @@ function GamePage() {
     useEffect(() => {
         const fetchGame = async () => {
             try {
-                const decodedGameName = decodeURIComponent(gameName.replace(/-/g, ' '));
-                const response = await axios.get(`${env.SERVER}/${encodeURIComponent(decodedGameName)}`);
+                const response = await axios.get(`${env.SERVER}/${encodeURIComponent(gameName)}`);
                 setGame(response.data.data);
                 setVotes(response.data.data.noOfVotes);
             } catch (error) {
