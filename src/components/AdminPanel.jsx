@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import {jwtDecode} from "jwt-decode";
 import UploadGame from './UploadGame';
 import DeleteGame from './DeleteGame';
 import AddAdmin from './AddAdmin';
@@ -14,9 +15,23 @@ function AdminPanel() {
   useEffect(() => {
     const token = localStorage.getItem('access_token');
     const superAccess = localStorage.getItem('super_access') === 'true'; // Retrieve super access
+
     if (token) {
-      setIsLoggedIn(true); // Set logged in state if token exists
-      setIsSuperUser(superAccess); // Set super user state
+      const isTokenExpired = () => {
+        try {
+          const { exp } = jwtDecode(token); // Decode the token to get expiration
+          return Date.now() >= exp * 1000; // Check if current time is past expiration
+        } catch (error) {
+          return true; // Assume token is expired or invalid if decoding fails
+        }
+      };
+
+      if (isTokenExpired()) {
+        handleLogout(); // Token is expired, so log the user out
+      } else {
+        setIsLoggedIn(true); // Set logged in state if token is valid
+        setIsSuperUser(superAccess); // Set super user state
+      }
     }
   }, []);
 
@@ -25,6 +40,7 @@ function AdminPanel() {
     localStorage.removeItem('super_access'); // Clear super access
     setIsLoggedIn(false); // Update logged in state
     setIsSuperUser(false); // Reset super user state
+    setCurrentView('uploadGame');
   };
 
   if (!isLoggedIn) {
