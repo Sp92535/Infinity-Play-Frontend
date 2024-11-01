@@ -20,11 +20,27 @@ function HomePage() {
       const newGamesResponse = await fetch(`${env.SERVER}/category_latest/new`);
       const newGamesData = await newGamesResponse.json();
       setNewGames(newGamesData.games);
+      
+    } catch (error) {
+      console.error('Error fetching game data:', error);
+    }
+  };
+
+  const fetchTrendingGameData = async () => {
+    try {
 
       const trendingGamesResponse = await fetch(`${env.SERVER}/category_latest/trending`);
       const trendingGamesData = await trendingGamesResponse.json();
       setTrendingGames(trendingGamesData.games);
 
+    } catch (error) {
+      console.error('Error fetching game data:', error);
+    }
+  };
+
+  const fetchPopularGameData = async () => {
+    try {
+  
       const popularGamesResponse = await fetch(`${env.SERVER}/category_latest/popular`);
       const popularGamesData = await popularGamesResponse.json();
       setPopularGames(popularGamesData.games);
@@ -34,8 +50,12 @@ function HomePage() {
     }
   };
 
+
+
   useEffect(() => {
     fetchGameData();
+    fetchPopularGameData();
+    fetchTrendingGameData();
   }, []);
 
   const capitalizeGameName = (name) => {
